@@ -65,3 +65,7 @@ ingress:
 
 ### Проверка доступности всех трех версий
 ![image](https://github.com/user-attachments/assets/1e279b3f-ec38-45d8-89f3-2dbe7e6dcf0d)
+
+### Состояние depoyment и helm
+![image](https://github.com/user-attachments/assets/a1051042-e503-4be7-9874-85845dee55e0)
+
