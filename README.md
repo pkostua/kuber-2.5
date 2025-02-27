@@ -9,7 +9,7 @@ https://github.com/netology-code/kuber-homeworks/blob/main/2.5/2.5.md
 ## Задание 2. Запустить две версии в разных неймспейсах
 ### Запуск первой версии в первом неймспейсе
 ```
-helm upgrade --install web1 nginx-app -n web12 -f web1-values.yaml
+helm upgrade --install web1 nginx-app -n app1 -f web1-values.yaml
 ```
 web1-values.yaml
 ```
@@ -28,7 +28,7 @@ ingress:
 
 ### Запуск второй версии в первом неймспейсе
 ```
-helm upgrade --install web2 nginx-app -n web12 -f web2-values.yaml
+helm upgrade --install web2 nginx-app -n app1 -f web2-values.yaml
 ```
 web2-values.yaml
 ```
@@ -46,7 +46,7 @@ ingress:
 ```
 ### Запуск третей версии во втором неймспейсе
 ```
-helm upgrade --install web3 nginx-app -n web3 -f web3-values.yaml
+helm upgrade --install web3 nginx-app -n app2 -f web3-values.yaml
 ```
 web3-values.yaml
 ```
