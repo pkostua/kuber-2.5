@@ -1,0 +1,26 @@
+replicaCount: 1
+containers:
+  image:  nginx
+  name:  nginx
+  tag: ""
+  port: 80
+
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: microk8s.mylocalserver.com
+      paths:
+        - path: /web1
+          pathType: ImplementationSpecific
+  tls:..
+    crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLekNDQWhPZ0F3SUJBZ0lVR0p3dDdnYjk4QXg4S1U3czJOT25zeEZrQ3JZd0RRWUpLb1pJaHZjTkFRRUwKQlFBd0pURWpNQ0VHQTFVRUF3d2FiV2xqY205ck9ITXViWGxzYjJOaGJITmxjblpsY2k1amIyMHdIaGNOTWpVd
+    key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRREUrUWMvR3FkOFk2OEoKblpNdFZlZGRmQ1prUHlvVWk1VjhLMDlZcGljRHFncklyd1ROT1FiUHJZOEwzVE9uOEVoNjlhTEpyeXg4eEVDQ
