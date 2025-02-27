@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-cm
+  labels:
+    app: {{ .Values.containers.name }}-page
+data:
+  index.html: |
+      <html>
+          <body>
+              <p>Hellow HELM!</p>
+              <p>Release: {{ .Release.Name }}</p>
+          </body>
+      </html>
+
+
