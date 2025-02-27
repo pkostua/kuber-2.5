@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-dpl
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:.
+      app: {{ .Release.Name }}-{{ .Values.containers.name }}
+  template:
+    metadata:
+      labels:.
+        app: {{ .Release.Name }}-{{ .Values.containers.name }}
+    spec:
+      containers:
+        - name: {{ .Values.containers.name }}
+          image: {{ .Values.containers.image }}:{{ .Values.containers.tag | default .Chart.AppVersion }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          volumeMounts:
+            - name: nginx-page
+              mountPath: "/usr/share/nginx/html"
+
+      volumes:
+        - name:  nginx-page
+          configMap:
+            name: {{ .Release.Name }}-cm
+
+
+
